@@ -10,10 +10,16 @@ from random import *
 
 # sigmoid
 def sig(n):
+    if n > 75:
+        return 1
+    elif n < -75:
+        return 0
     return 1 / (1 + exp(-n))
 
 # derivative of sigmoid
 def dSig(n):
+    if n > 75 or n < -75:
+        return 0
     return exp(-n) / ((1 + exp(-n)) ** 2)
 
 # neural network class
